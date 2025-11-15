@@ -7,6 +7,12 @@
             "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
         }
     },
+    "bbox": [
+        23.6138173006475,
+        46.7588361818343,
+        23.6311327200383,
+        46.7671558912843
+    ],
     "features": [
         {
             "type": "Feature",
@@ -14,6 +20,12 @@
                 "name": "Cluj-Napoca Running",
                 "type": "running"
             },
+            "bbox": [
+                23.613817300647497,
+                46.75883618183434,
+                23.631132720038295,
+                46.767155891284347
+            ],
             "geometry": {
                 "type": "MultiLineString",
                 "coordinates": [
