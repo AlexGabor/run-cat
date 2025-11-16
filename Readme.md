@@ -11,3 +11,7 @@ docker run -it --rm -p 8888:8000 ghcr.io/maplibre/maputnik:main
 ```
 ogr2ogr -f GeoJSON activity_20775840672.geojson activity_20775840672.gpx tracks -lco WRITE_BBOX=YES
 ```
+
+```
+./gpx2post.py
+```
