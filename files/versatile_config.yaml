@@ -1,0 +1,24 @@
+# https://github.com/versatiles-org/versatiles-rs/blob/main/versatiles/config.md
+
+# Optional Cross-Origin Resource Sharing (CORS) settings
+cors: 
+  
+  # Allowed origins for CORS requests
+  # Supports:
+  # - Exact origins like `https://example.com`
+  # - Globs at the start of the domain like `*.example.com`
+  # - Globs at the end of the domain like `example.*`
+  # - Regular expressions enclosed in slashes like `/domain\..*$/`
+  allowed_origins: 
+    - "http://127.0.0.1:4000"
+
+# Optional list of tile sources
+tiles: 
+  - # Optional name identifier for this tile source
+    # Tiles will be available under `/tiles/{name}/...`
+    # Defaults to the last part of the path (e.g., "osm" for "osm.versatiles")
+    name: osm
+    
+    # Path or URL to the tile data source
+    # Can be a local file or remote URL.
+    path: osm.versatiles

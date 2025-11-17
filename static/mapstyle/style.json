@@ -329,7 +329,18 @@
     "sources": {
         "runcat": {
             "type": "vector",
-            "url": "http://127.0.0.1:3000/tiles"
+            "tiles": [
+                "http://127.0.0.1:3000/tiles/osm/{z}/{x}/{y}"
+            ],
+            "scheme": "xyz",
+            "bounds": [
+                -180,
+                -85.0511287798066,
+                180,
+                85.0511287798066
+            ],
+            "minzoom": 0,
+            "maxzoom": 14
         }
     },
     "version": 8,
