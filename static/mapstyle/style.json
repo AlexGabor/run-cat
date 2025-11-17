@@ -1,0 +1,338 @@
+{
+    "center": [
+        46.77,
+        23.59
+    ],
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "rgba(210, 239, 207, 1)"
+            }
+        },
+        {
+            "id": "ocean",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "ocean",
+            "paint": {
+                "fill-color": "rgba(211, 245, 250, 1)"
+            }
+        },
+        {
+            "id": "water_polygons",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "water_polygons",
+            "paint": {
+                "fill-color": "rgba(211, 245, 250, 1)"
+            }
+        },
+        {
+            "id": "water_lines",
+            "type": "line",
+            "source": "runcat",
+            "source-layer": "water_lines",
+            "paint": {
+                "line-color": "rgba(211, 245, 250, 1)",
+                "line-width": 2
+            }
+        },
+        {
+            "id": "landcover",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "land",
+            "paint": {
+                "fill-color": [
+                    "match",
+                    [
+                        "get",
+                        "kind"
+                    ],
+                    "grassland",
+                    "rgba(210, 239, 207, 1)",
+                    "barren",
+                    "rgba(255, 243, 215, 1)",
+                    "urban_area",
+                    "rgba(230, 230, 230, 1)",
+                    "farmland",
+                    "rgba(216, 239, 210, 1)",
+                    "glacier",
+                    "rgba(255, 255, 255, 1)",
+                    "scrub",
+                    "rgba(234, 239, 210, 1)",
+                    "rgba(196, 231, 210, 1)"
+                ],
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    5,
+                    1,
+                    20,
+                    0.2
+                ]
+            }
+        },
+        {
+            "id": "landuse_park",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "land",
+            "filter": [
+                "in",
+                "kind",
+                "national_park",
+                "park",
+                "cemetery",
+                "protected_area",
+                "nature_reserve",
+                "forest",
+                "golf_course",
+                "wood",
+                "nature_reserve",
+                "forest",
+                "scrub",
+                "grassland",
+                "grass",
+                "military",
+                "naval_base",
+                "airfield"
+            ],
+            "paint": {
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    6,
+                    0,
+                    11,
+                    1
+                ],
+                "fill-color": [
+                    "case",
+                    [
+                        "in",
+                        [
+                            "get",
+                            "kind"
+                        ],
+                        [
+                            "literal",
+                            [
+                                "national_park",
+                                "park",
+                                "cemetery",
+                                "protected_area",
+                                "nature_reserve",
+                                "forest",
+                                "golf_course"
+                            ]
+                        ]
+                    ],
+                    "#9cd3b4",
+                    [
+                        "in",
+                        [
+                            "get",
+                            "kind"
+                        ],
+                        [
+                            "literal",
+                            [
+                                "wood",
+                                "nature_reserve",
+                                "forest"
+                            ]
+                        ]
+                    ],
+                    "#a0d9a0",
+                    [
+                        "in",
+                        [
+                            "get",
+                            "kind"
+                        ],
+                        [
+                            "literal",
+                            [
+                                "scrub",
+                                "grassland",
+                                "grass"
+                            ]
+                        ]
+                    ],
+                    "#99d2bb",
+                    [
+                        "in",
+                        [
+                            "get",
+                            "kind"
+                        ],
+                        [
+                            "literal",
+                            [
+                                "glacier"
+                            ]
+                        ]
+                    ],
+                    "#e7e7e7",
+                    [
+                        "in",
+                        [
+                            "get",
+                            "kind"
+                        ],
+                        [
+                            "literal",
+                            [
+                                "sand"
+                            ]
+                        ]
+                    ],
+                    "#e2e0d7",
+                    [
+                        "in",
+                        [
+                            "get",
+                            "kind"
+                        ],
+                        [
+                            "literal",
+                            [
+                                "military",
+                                "naval_base",
+                                "airfield"
+                            ]
+                        ]
+                    ],
+                    "#c6dcdc",
+                    "#e2dfda"
+                ]
+            }
+        },
+        {
+            "id": "landuse_beach",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "land",
+            "filter": [
+                "in",
+                "kind",
+                "beach"
+            ],
+            "paint": {
+                "fill-color": "rgba(248, 242, 219, 1)"
+            }
+        },
+        {
+            "id": "landuse_urban_green",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "sites",
+            "filter": [
+                "in",
+                "kind",
+                "allotments",
+                "village_green",
+                "playground"
+            ],
+            "paint": {
+                "fill-color": "#9cd3b4",
+                "fill-opacity": 0.7
+            }
+        },
+        {
+            "id": "streets",
+            "type": "line",
+            "source": "runcat",
+            "source-layer": "streets",
+            "paint": {
+                "line-color": "#FFFFFF",
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.6
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    14,
+                    2,
+                    20,
+                    7
+                ]
+            }
+        },
+        {
+            "id": "bridges",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "bridges",
+            "paint": {
+                "fill-color": "#FFFFFF"
+            }
+        },
+        {
+            "id": "buildings",
+            "type": "fill",
+            "source": "runcat",
+            "source-layer": "buildings",
+            "paint": {
+                "fill-color": "rgba(241, 252, 247, 0.52)"
+            }
+        },
+        {
+            "id": "boundaries",
+            "type": "line",
+            "source": "runcat",
+            "source-layer": "boundaries",
+            "paint": {
+                "line-color": "#adadad",
+                "line-width": 0.7,
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            2
+                        ]
+                    ],
+                    4,
+                    [
+                        "literal",
+                        [
+                            2,
+                            1
+                        ]
+                    ]
+                ]
+            }
+        }
+    ],
+    "name": "RunCat",
+    "pitch": 0,
+    "sources": {
+        "runcat": {
+            "type": "vector",
+            "url": "http://127.0.0.1:3000/tiles"
+        }
+    },
+    "version": 8,
+    "zoom": 14,
+    "id": "nlac8o3"
+}

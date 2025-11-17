@@ -1,7 +1,7 @@
 function drawMap(geopath, container, bb1, bb2, bb3, bb4) {
     const map = new maplibregl.Map({
         container: container, // container id
-        style: 'http://127.0.0.1:3000/style/style.json', // style URL
+        style: './static/mapstyle/style.json', // style URL
         zoom: 14, // starting zoom
         attributionControl: false,
     });
