@@ -17,6 +17,11 @@ body {
     align-items: center;
 }
 
+.post-list {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
     width: 400px;
     display: block;

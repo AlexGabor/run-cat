@@ -1,0 +1,54 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ page.title }}</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@5.10.0/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@5.10.0/dist/maplibre-gl.js'></script>
+
+    <link rel='stylesheet' href='/static/css/root.css' />
+    <script src='/static/js/drawMap.js'></script>
+</head>
+
+<body>
+    <div class="post-list">
+        {% for post in site.categories.post %}
+        <div id="content">
+            <div class="card">
+                <div id="map-{{ forloop.index }}" class="map"></div>
+                <div class="card-line">
+                    <span class="loc">{{ post.location }}</span>
+                    <span class="dist">{{ post.distance }}</span>
+                </div>
+                <div class="card-line">
+                    <span class="date">{{ post.display-date }}</span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            drawMap({
+                geopath: '{{ post.geopath }}',
+                container: 'map-{{ forloop.index }}',
+                bb1: '{{ post.bb1 }}',
+                bb2: '{{ post.bb2 }}',
+                bb3: '{{ post.bb3 }}',
+                bb4: '{{ post.bb4 }}',
+            })
+        </script>
+
+        {% endfor %}
+    </div>
+</body>
+
+</html>

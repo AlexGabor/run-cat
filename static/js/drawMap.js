@@ -1,4 +1,4 @@
-function drawMap(geopath, container, bb1, bb2, bb3, bb4) {
+function drawMap({ geopath, container, bb1, bb2, bb3, bb4 } = {}) {
     const map = new maplibregl.Map({
         container: container, // container id
         style: './static/mapstyle/style.json', // style URL
