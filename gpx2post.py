@@ -23,6 +23,7 @@ for gpxFile in files:
         bb1, bb2, bb3, bb4 = geoJson['bbox']
 
     date, location, distance = filename.split('_')
+    location = location.replace('-', ' ')
     y, m, d = date.split('-')
 
     postFile = filename.replace("_", "-") + ".md"
