@@ -6,7 +6,6 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #fbf9f3;
     color: #9cd3b4;
 
     font-family: "protest", sans-serif;
@@ -17,7 +16,9 @@ body {
 }
 
 #content {
-    padding: 40px;
+    background-color: #fbf9f3;
+    break-inside: avoid;
+    padding: .2cm;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,16 +31,18 @@ body {
 }
 
 .card {
-    width: 400px;
+    /* border-radius: 4mm; */
+    width: 6cm;
     display: block;
     background-color: #fff;
-    padding: 20px;
+    padding: .5cm;
     padding-bottom: 20px;
 }
 
 .map {
-    width: 400px;
-    height: 400px;
+    border-radius: 2mm;
+    width: 6cm;
+    height: 6cm;
     margin-bottom: 10px;
 }
 
